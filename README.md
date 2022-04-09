@@ -9,11 +9,11 @@
 
 https://github.dev/
 
-### StackbBlitz – Darf es ein bisschen mehr sein?
+### StackBlitz – Darf es ein bisschen mehr sein?
 
-Die Entwicklung von Webapplikationen braucht Werkzeuge. Die meisten stehen als NPM-Pakete zur Verfügung. Mit StackbBlitz kann man diese im Browser nutzen.
+Die Entwicklung von Webapplikationen braucht Werkzeuge. Die meisten stehen als NPM-Pakete zur Verfügung. Mit StackBlitz kann man diese im Browser nutzen.
 
-1. [StackbBlitz](https://stackblitz.com/) öffnen
+1. [StackBlitz](https://stackblitz.com/) öffnen
 1. Beispielprojekt Express unter Backend öffnen
 1. Import von **express** in *package.json* zeigen
 1. *index.js* anpassen
