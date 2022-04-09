@@ -5,7 +5,7 @@
 ### Visual Studio Code – der (Lieblings-)Editor ist immer dabei
 
 1. Ein Repository in Github öffnen
-1. Punkte (.) eingeben
+1. Punkt (.) eingeben
 
 https://github.dev/
 
