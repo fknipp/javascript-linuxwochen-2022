@@ -29,12 +29,15 @@ https://blog.stackblitz.com/posts/introducing-webcontainers/
 
 Wenn es mehr als NPMs, sondern diverse Binaries braucht, führt uns der Weg zu Container. Diese Methode ist älter als die Webcontainer bei StackBlitz, aber auch dort erfreut sich Visual Studio Code als Editor steigender Beliebtheit.
 
-1. 
+1. Öffnen des Repositories https://github.com/gitpod-io/template-typescript-deno
+1. Klick auf **Open in Gitpod**
+1. Zeigen von *.gitpod.yml* und *.gitpod.Dockerfile*
 
+https://gitpod.io
 
 ## Der Sprung auf die Kommandozeile
 
-### Deno
+### Deno – Node.js reloaded
 
 10 Jahre nach der Präsentation von Node.js hat dessen Erfinder eine neue JavaSript-Runtime erstellt. Diese setzt zwar auch wieder auf Googles V8 auf, soll aber [alle Fehler vermeiden](https://www.youtube.com/watch?v=M3BM9TB-8yA), die bei Node passiert sind.
 
@@ -67,13 +70,51 @@ Daher werden diese Tools zur Verarbeitung von JavaScript-Dateien in anderen Prog
 
 Rust kann übrigens auch nach WebAssembly (WASM) kompilieren.
 
-### xz
-TypeScript
+### zx – die Verschmelzung von JavaScript und Bash
 
+Die Bash ist sehr toll, aber irgendwann kommt man an ihre Grenzen, und der Wunsch nach einer leistungsfähigeren Programmiersprache wird laut. Google versucht diese Lücke mit zx zu schließen.
+
+1. Workspace in Gitpod öffnen
+1. Imstallation von zx
+    ```
+    npm i -g zx
+    ```
+1. Erzeugen einer neuen Datei *test-zx.mjs* mit dem Inhalt
+    ```
+    #!/usr/bin/env zx
+    ```
+1. Ausführungsrechte setzen
+    ```
+    chmod a+x test-zx.mjs
+    ```
+1. Ausführung der Datei mit
+    ```
+    ./test-zx.mjs
+    ```
+
+```javascript
+#!/usr/bin/env zx
+
+// Aufruf eines Befehls
+await $`ls`;
+
+// Verarbeitung der Ausgabe
+const process = await quiet($`ls`);
+console.log(process.stdout.split("\n"));
+
+// Escaping der Parameter
+const ugly_filename = "abc $USER &";
+await $`touch ${ugly_filename}`;
+```
+
+https://github.com/google/zx
 
 ## TypeScript: Was tut sich da?
 
-Typisierung von JavaScript, ursprünglich 
+JavaScript ist eine schwach typisierte Sprache. Typisierung bringt aber Vorteile, z. B. die Typprüfung vor der Ausführung oder verbesserte Assistenten bei der Softwareentwicklung. TypeScript ist eine streng typisierte Sprache auf Basis von JavaScript. Es ist eine Übersetzung von TypeScript nach JavaScript erforderlich.
+
+https://www.typescriptlang.org/
+
+Jede JavaScript-Datei ist eine gültige TypeScript-Datei. Das erlaubt die Erweiterung von JavaSript um eine optionale Typisieren. Ein entsprechender Vorschlag liegt bereits auf Stage 1 vor.
 
 https://github.com/tc39/proposal-type-annotations
-
